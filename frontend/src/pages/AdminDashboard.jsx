@@ -8,13 +8,13 @@ const AdminDashboard = () => {
   const [pending, setPending] = useState([]);
   const [loading, setLoading] = useState(true);
   const [processingId, setProcessingId] = useState(null);
-  const { user } = useAuth();
 
   const fetchPending = async () => {
     try {
       const { data } = await api.get('/achievements/pending');
       setPending(data);
     } catch (error) {
+      console.error(error);
       toast.error('Failed to fetch pending achievements');
     } finally {
       setLoading(false);
@@ -22,6 +22,7 @@ const AdminDashboard = () => {
   };
 
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     fetchPending();
   }, []);
 

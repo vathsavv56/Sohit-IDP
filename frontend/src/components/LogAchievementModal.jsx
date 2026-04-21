@@ -34,6 +34,7 @@ const LogAchievementModal = ({ isOpen, onClose, onSuccess }) => {
       setFormData(prev => ({ ...prev, description: response.data.description }));
       toast.success('Description generated!');
     } catch (error) {
+      console.error(error);
       toast.error('Failed to generate description');
     } finally {
       setIsAiGenerating(false);

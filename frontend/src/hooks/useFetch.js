@@ -17,9 +17,11 @@ export const useFetch = (url, options = {}) => {
     } finally {
       setLoading(false);
     }
-  }, [url]); // Intentionally omitting options to prevent infinite loops, assume options are stable
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [url]); // Intentionally omitting options to prevent infinite loops
 
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     fetchData();
   }, [fetchData]);
 

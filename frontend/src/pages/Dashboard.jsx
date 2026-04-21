@@ -74,6 +74,7 @@ const Dashboard = () => {
       });
       setChatMessages(prev => [...prev, { role: 'assistant', content: response.data.text }]);
     } catch (error) {
+      console.error(error);
       setChatMessages(prev => [...prev, { role: 'assistant', content: 'Sorry, I am having trouble connecting right now.' }]);
     } finally {
       setChatLoading(false);

@@ -55,7 +55,6 @@ const Leaderboard = () => {
                 </tr>
               ) : (
                 leaderboard?.map((student, index) => {
-                  const isTop3 = index < 3;
                   const isFirst = index === 0;
                   return (
                     <tr 
