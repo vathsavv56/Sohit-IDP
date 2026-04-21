@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Sora:wght@500;600;700&display=swap");
+
+@import "tailwindcss";
+
+@theme {
+  --font-jmono: "JetBrains Mono", monospace;
+  --font-grosek: "Hanken Grotesk", sans-serif;
+  --font-manrope: "Sora", "Manrope", "Inter", "Segoe UI", sans-serif;
+  
+  --color-bg-primary: #f2f3ef; /* Very pale sage/beige for outer spaces */
+  --color-bg-card: #ffffff; /* Crisp white for cards/app */
+  --color-bg-elevated: #f4f4f5; /* zinc-100 */
+  
+  --color-text-primary: #18181b; /* zinc-950 - deep black */
+  --color-text-secondary: #71717a; /* zinc-500 */
+  
+  --color-accent: #d4fe44; /* The signature lime green */
+  --color-accent-hover: #c4ec3e; 
+  
+  --color-success: #22c55e;
+  --color-warning: #f59e0b;
+  --color-danger: #ef4444;
+  --color-border: #e4e4e7; /* zinc-200 */
+}
+
+@layer base {
+  body {
+    background-color: var(--color-bg-primary);
+    color: var(--color-text-primary);
+    font-family: var(--font-manrope);
+    -webkit-font-smoothing: antialiased;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #d4d4d8; /* zinc-300 */
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #a1a1aa; /* zinc-400 */
+}
